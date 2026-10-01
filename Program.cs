@@ -131,18 +131,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Abteilung department1 = new Abteilung("Informatik");
         Klasse class1 = new Klasse("4BHITS");
-        Klasse class2 = new Klasse("4AHITS");
-
-        department1.addClass(class1);
-        department1.addClass(class2);
-
-        Schüler student1 = new Schüler("Laurin Forster", 17);
-
-        class1.addStudent(student1);
-        class2.addStudent(student1);
-
-        department1.print();
+        Lehrer teacher1 = new Lehrer("Herr Einböck", 40);
     }
 }
