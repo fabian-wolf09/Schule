@@ -18,7 +18,7 @@ classDiagram
 
     Schule "1" o-- "1..n" Abteilung : besteht aus
     Abteilung "1" o-- "1..n" Klasse : besteht aus
-    Klasse "0..n" o-- "1" Lehrer : hat
+    Klasse "0..1" o-- "0..1" Lehrer : hat KV
     Klasse "0..1" o-- "0..n" Schüler : hat
 
     class Person
