@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/fabian/Nextcloud/Schule/26 27/SEW/18.9/Schule/Schule.csproj": {}
+    "D:\\Nextcloud\\Schule\\26 27\\SEW\\18.9\\Schule\\Schule.csproj": {}
   },
   "projects": {
-    "/home/fabian/Nextcloud/Schule/26 27/SEW/18.9/Schule/Schule.csproj": {
+    "D:\\Nextcloud\\Schule\\26 27\\SEW\\18.9\\Schule\\Schule.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/fabian/Nextcloud/Schule/26 27/SEW/18.9/Schule/Schule.csproj",
+        "projectUniqueName": "D:\\Nextcloud\\Schule\\26 27\\SEW\\18.9\\Schule\\Schule.csproj",
         "projectName": "Schule",
-        "projectPath": "/home/fabian/Nextcloud/Schule/26 27/SEW/18.9/Schule/Schule.csproj",
-        "packagesPath": "/home/fabian/.nuget/packages/",
-        "outputPath": "/home/fabian/Nextcloud/Schule/26 27/SEW/18.9/Schule/obj/",
+        "projectPath": "D:\\Nextcloud\\Schule\\26 27\\SEW\\18.9\\Schule\\Schule.csproj",
+        "packagesPath": "C:\\Users\\fabsw\\.nuget\\packages\\",
+        "outputPath": "D:\\Nextcloud\\Schule\\26 27\\SEW\\18.9\\Schule\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/fabian/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\fabsw\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -39,10 +39,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "11.0.100"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -55,12 +56,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[10.0.12, 10.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[10.0.12, 10.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[10.0.12, 10.0.12]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[10.0.12, 10.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.112/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\11.0.100-rc.1.26425.128/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
