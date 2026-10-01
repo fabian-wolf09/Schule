@@ -39,7 +39,7 @@ public class Klasse
     {
         this.name = name;
         students = new List<Schüler>();
-        kv = null;
+        kv = new Lehrer("None", 0);
     }
 
     public void print()
@@ -119,14 +119,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Abteilung department1 = new Abteilung("Informatik");
-
         Klasse class1 = new Klasse("4BHITS");
-        Lehrer teacher = new Lehrer("Herr Einböck", 40);
+        Schüler student1 = new Schüler("Alexander Steiner", 18);
 
-        department1.addClass(class1);
-        class1.addKV(teacher);
-        
-        department1.print();
+        class1.addStudent(student1);
+   
+        class1.print();
     }
 }
