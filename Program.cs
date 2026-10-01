@@ -17,8 +17,16 @@
 }
 
 
-public class Schüler : Person {}
-public class Lehrer : Person {}
+public class Schüler : Person {
+    public Schüler(string name, int age) : base(name, age)
+    {
+    }
+}
+public class Lehrer : Person {
+    public Lehrer(string name, int age) : base(name, age)
+    {
+    }
+}
 
 
 public class Klasse
@@ -71,15 +79,15 @@ public class Abteilung
     public void print()
     {
         Console.WriteLine("Department: " + name);
-        foreach (var class in classes)
+        foreach (var cls in classes)
         {
-            class.print();
+            cls.print();
             Console.WriteLine();
         }
     }
-    public void addClass(Klasse class)
+    public void addClass(Klasse cls)
     {
-        classes.Add(class);
+        classes.Add(cls);
     }
 }
 public class Schule
@@ -111,9 +119,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Schule school = new Schule();
-        Abteilung inf = new Abteilung("Informatik");
+        Abteilung department1 = new Abteilung("Informatik");
+
+        Klasse class1 = new Klasse("4BHITS");
+        Lehrer teacher = new Lehrer("Herr Einböck", 40);
+
+        department1.addClass(class1);
+        class1.addKV(teacher);
         
-        Abteilung department = school.addDepartment(inf);
+        department1.print();
     }
 }
