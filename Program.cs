@@ -90,6 +90,7 @@ public class Schule
     public Schule(string name)
     {
         this.name = name;
+        departments = new List<Abteilung>();
     }
     public void listall()
     {
