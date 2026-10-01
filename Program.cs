@@ -3,10 +3,10 @@
 	public string name;
 	public int age;
 
-	public Person()
+	public Person(string name, int age)
     {
-        name = "";
-        age = 0;
+        this.name = name;
+        this.age = age;
     }
     public void print()
     {
@@ -15,46 +15,45 @@
         Console.WriteLine("Age: " + age);
     }
 }
-public class Schüler : Person
-{
-}
-public class Lehrer : Person
-{
-}
+
+
+public class Schüler : Person {}
+public class Lehrer : Person {}
+
+
 public class Klasse
 {
-    public List<Person> members;
+    public List<Schüler> students;
+    public Lehrer kv;
     public string name;
 
-    public Klasse()
+    public Klasse(string name)
     {
-        members = new List<Person>();
-        name = "";
+        this.name = name;
+        students = new List<Schüler>();
+        kv = null;
     }
+
     public void print()
     {
         Console.WriteLine("Class: " + name);
-        foreach (var member in members)
+        Console.WriteLine("KV: " + kv.name);
+        foreach (var student in students)
         {
-            member.print();
+            Console.WriteLine("Schüler: ");
+            student.print();
             Console.WriteLine();
         }
     }
-    public Lehrer addTeacher(string name, int age)
+
+    public void addKV(Lehrer kv)
     {
-        Lehrer teacher = new Lehrer();
-        teacher.name = name;
-        teacher.age = age;
-        members.Add(teacher);
-        return teacher;
+        this.kv = kv;
     }
-    public Schüler addStudent(string name, int age)
+    
+    public void addStudent(Schüler student)
     {
-        Schüler student = new Schüler();
-        student.name = name;
-        student.age = age;
-        members.Add(student);
-        return student;
+        students.Add(student);
     }
 
 }
@@ -63,26 +62,24 @@ public class Abteilung
     public List<Klasse> classes;
     public string name;
 
-    public Abteilung()
+    public Abteilung(string name)
     {
-        name = "";
+        this.name = name;
         classes = new List<Klasse>();
     }
+
     public void print()
     {
         Console.WriteLine("Department: " + name);
-        foreach (var klasse in classes)
+        foreach (var class in classes)
         {
-            klasse.print();
+            class.print();
             Console.WriteLine();
         }
     }
-    public Klasse addClass(string name)
+    public void addClass(Klasse class)
     {
-        Klasse klasse = new Klasse();
-        klasse.name = name;
-        classes.Add(klasse);
-        return klasse;
+        classes.Add(class);
     }
 }
 public class Schule
@@ -90,10 +87,9 @@ public class Schule
     public List<Abteilung> departments;
     public string name;
 
-    public Schule()
+    public Schule(string name)
     {
-        name = "";
-        departments = new List<Abteilung>();
+        this.name = name;
     }
     public void listall()
     {
@@ -101,12 +97,11 @@ public class Schule
         {
             department.print();
             Console.WriteLine();
+            Console.WriteLine();
         }
     }
-    public Abteilung addDepartment(string name)
+    public Abteilung addDepartment(Abteilung department)
     {
-        Abteilung department = new Abteilung();
-        department.name = name;
         departments.Add(department);
         return department;
     }
@@ -116,12 +111,8 @@ class Program
     static void Main(string[] args)
     {
         Schule school = new Schule();
-        Abteilung department = school.addDepartment("Informatik");
-        Klasse klasse = department.addClass("4BHITS");
-        Lehrer teacher = klasse.addTeacher("Bliem", 1000);
-        Schüler student = klasse.addStudent("Fabian", 17);
-        Schüler student2 = klasse.addStudent("Laurin", 17);
-        Schüler student3 = klasse.addStudent("Manuel", 18);
-        school.listall();
+        Abteilung inf = new Abteilung("Informatik");
+        
+        Abteilung department = school.addDepartment(inf);
     }
 }
