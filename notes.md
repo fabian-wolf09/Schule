@@ -40,7 +40,7 @@ classDiagram
    - Ergebnis: Der Schüler ist nun in der Liste der Klasse.
 3. Schüler darf höchstens einer Klasse angehören
    - Vorraussetzungen: Ein Schüler ist bereits einer Klasse zugewiesen und eine weitere Klasse existiert.
-   - Aktion: Den Schüler in eine versuchen einer zweiten Klasse zuweisen.
+   - Aktion: Den Schüler versuchen einer zweiten Klasse zuzuweisen.
    - Ergebnis: Es wird ein Fehler geworfen und der Schüler ist am Ende nicht in beiden Klassen eingetragen.
 4. Lehrer als Nicht-KV
    - Vorraussetzungen: Eine Klasse

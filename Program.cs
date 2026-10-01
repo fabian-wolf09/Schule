@@ -17,12 +17,18 @@
 }
 
 
-public class Schüler : Person {
+public class Schüler : Person
+{
+
+    public Klasse currentClass;
+
     public Schüler(string name, int age) : base(name, age)
     {
+        this.currentClass = null;
     }
 }
-public class Lehrer : Person {
+public class Lehrer : Person
+{
     public Lehrer(string name, int age) : base(name, age)
     {
     }
@@ -61,6 +67,12 @@ public class Klasse
     
     public void addStudent(Schüler student)
     {
+        if (student.currentClass != null)
+        {
+            Console.WriteLine("Error");
+            return;
+        }
+        student.currentClass = this;
         students.Add(student);
     }
 
@@ -119,11 +131,18 @@ class Program
 {
     static void Main(string[] args)
     {
+        Abteilung department1 = new Abteilung("Informatik");
         Klasse class1 = new Klasse("4BHITS");
-        Schüler student1 = new Schüler("Alexander Steiner", 18);
+        Klasse class2 = new Klasse("4AHITS");
+
+        department1.addClass(class1);
+        department1.addClass(class2);
+
+        Schüler student1 = new Schüler("Laurin Forster", 17);
 
         class1.addStudent(student1);
-   
-        class1.print();
+        class2.addStudent(student1);
+
+        department1.print();
     }
 }
